@@ -1,4 +1,4 @@
-class CategoriesModel {
-  String categoriesName;
+class CategorieModel {
+  String categorieName;
   String imgUrl;
 }
