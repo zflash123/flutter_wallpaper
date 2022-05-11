@@ -22,16 +22,19 @@ class _SearchViewState extends State<SearchView> {
   getSearchWallpaper(String searchQuery) async {
     await http.get(
         "https://api.pexels.com/v1/search?query=$searchQuery&per_page=30&page=1",
-        headers: {"Authorization": "563492ad6f9170000100000199e840d1b2e84a67a6d2dc7b35564406"}).then((value) {
+        headers: {
+          "Authorization":
+              "563492ad6f9170000100000199e840d1b2e84a67a6d2dc7b35564406"
+        }).then((value) {
       //print(value.body);
 
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       jsonData["photos"].forEach((element) {
         //print(element);
-        WallpaperModel photosModel = new WallpaperModel();
-        photosModel = WallpaperModel.fromMap(element);
-        photos.add(photosModel);
-        //print(photosModel.toString()+ "  "+ photosModel.src.portrait);
+        WallpaperModel WallpaperModel = new WallpaperModel();
+        WallpaperModel = WallpaperModel.fromMap(element);
+        photos.add(WallpaperModel);
+        //print(WallpaperModel.toString()+ "  "+ WallpaperModel.src.portrait);
       });
 
       setState(() {});
