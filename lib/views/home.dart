@@ -6,10 +6,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_wallpaperhub/data/data.dart';
 import 'dart:convert';
 import 'package:flutter_wallpaperhub/model/categories_model.dart';
-import 'package:flutter_wallpaperhub/models/photos_model.dart';
-import 'package:flutter_wallpaperhub/view/categorie_screen.dart';
-import 'package:flutter_wallpaperhub/view/search_view.dart';
-import 'package:flutter_wallpaperhub/widget/widget.dart';
+import 'package:flutter_wallpaperhub/model/wallpaper_model.dart';
+import 'package:flutter_wallpaperhub/views/categorie.dart';
+import 'package:flutter_wallpaperhub/views/search.dart';
+import 'package:flutter_wallpaperhub/widgets/widget.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -17,24 +17,27 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<CategorieModel> categories = new List();
+  List<CategoriesModel> categories = new List();
 
   int noOfImageToLoad = 30;
-  List<PhotosModel> photos = new List();
+  List<WallpaperModel> photos = new List();
 
   getTrendingWallpaper() async {
     await http.get(
         "https://api.pexels.com/v1/curated?per_page=$noOfImageToLoad&page=1",
-        headers: {"Authorization": apiKEY}).then((value) {
+        headers: {
+          "Authorization":
+              "563492ad6f9170000100000199e840d1b2e84a67a6d2dc7b35564406"
+        }).then((value) {
       //print(value.body);
 
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       jsonData["photos"].forEach((element) {
         //print(element);
-        PhotosModel photosModel = new PhotosModel();
-        photosModel = PhotosModel.fromMap(element);
-        photos.add(photosModel);
-        //print(photosModel.toString()+ "  "+ photosModel.src.portrait);
+        WallpaperModel wallpaperModel = new WallpaperModel();
+        wallpaperModel = WallpaperModel.fromMap(element);
+        photos.add(wallpaperModel);
+        //print(WallpaperModel.toString()+ "  "+ WallpaperModel.src.portrait);
       });
 
       setState(() {});
@@ -73,7 +76,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: brandName(),
+        title: BrandName(),
         elevation: 0.0,
       ),
       backgroundColor: Colors.white,
