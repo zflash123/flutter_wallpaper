@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wallpaperhub/model/wallpaper_model.dart';
-import 'package:flutter_wallpaperhub/views/image.dart';
+import 'package:flutter_wallpaperhub/models/wallpaper_model.dart';
+import 'package:flutter_wallpaperhub/view/image.dart';
 
 Widget wallPaper(List<WallpaperModel> listPhotos, BuildContext context) {
   return Container(

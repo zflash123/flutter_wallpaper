@@ -5,10 +5,10 @@ import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_wallpaperhub/data/data.dart';
 import 'dart:convert';
-import 'package:flutter_wallpaperhub/model/categories_model.dart';
-import 'package:flutter_wallpaperhub/model/wallpaper_model.dart';
-import 'package:flutter_wallpaperhub/views/categorie.dart';
-import 'package:flutter_wallpaperhub/views/search.dart';
+import 'package:flutter_wallpaperhub/models/categories_model.dart';
+import 'package:flutter_wallpaperhub/models/wallpaper_model.dart';
+import 'package:flutter_wallpaperhub/view/categorie.dart';
+import 'package:flutter_wallpaperhub/view/search.dart';
 import 'package:flutter_wallpaperhub/widgets/widget.dart';
 
 class Home extends StatefulWidget {

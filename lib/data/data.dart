@@ -1,4 +1,4 @@
-import '../model/categories_model.dart';
+import '../models/categories_model.dart';
 
 List<CategoriesModel> getCategories() {
   List<CategoriesModel> categories = new List();

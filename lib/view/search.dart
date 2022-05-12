@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_wallpaperhub/data/data.dart';
-import 'package:flutter_wallpaperhub/model/wallpaper_model.dart';
+import 'package:flutter_wallpaperhub/models/wallpaper_model.dart';
 import 'package:flutter_wallpaperhub/widgets/widget.dart';
 
 class SearchView extends StatefulWidget {
