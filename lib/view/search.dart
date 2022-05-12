@@ -31,9 +31,9 @@ class _SearchViewState extends State<SearchView> {
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       jsonData["photos"].forEach((element) {
         //print(element);
-        WallpaperModel WallpaperModel = new WallpaperModel();
-        WallpaperModel = WallpaperModel.fromMap(element);
-        photos.add(WallpaperModel);
+        WallpaperModel wallpaperModel = new WallpaperModel();
+        wallpaperModel = WallpaperModel.fromMap(element);
+        photos.add(wallpaperModel);
         //print(WallpaperModel.toString()+ "  "+ WallpaperModel.src.portrait);
       });
 
